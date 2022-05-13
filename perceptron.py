@@ -65,7 +65,7 @@ class Perceptron():
             #Update weights with L2 regularisation
             self.W[1:] = ((1-(2*self.k*self.u)) * self.W[1:]) + (y*X*self.u)
 
-        self.W[0] = self.W[0] + y #Update Bias
+        self.W[0] = self.W[0] + self.u*y #Update Bias
 
     def training(self, train, reg=False, k=1):
         """
